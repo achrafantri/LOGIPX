@@ -1,0 +1,11 @@
+# data.yaml pour YOLOv8-Seg (COCO Segmentation)
+path: C:\Users\user\Desktop\Warehouse Parcel Classification Project\model\wd
+
+train: train
+val: valid
+test: test
+
+# classes (⚠️ adapte selon _annotations.coco.json)
+names:
+  0: box
+  1: fragile
