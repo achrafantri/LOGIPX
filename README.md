@@ -3,7 +3,7 @@
 ![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)
 ![Total Images](https://img.shields.io/badge/Total%20Images-8,788-blue?style=flat-square)
 ![Total Packages](https://img.shields.io/badge/Total%20Packages-11,427-green?style=flat-square)
-![GitHub repo size](https://img.shields.io/github/repo-size/achrafantri/LOGIPX?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/achrafantri/LOGIPX?style=flat-square&cacheSeconds=1)
 
 ### Status: Production-Ready for Research
 
