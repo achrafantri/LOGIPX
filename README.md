@@ -1,10 +1,27 @@
 # 📦 LOGIPACK: A Robust Multimodal Benchmark for Logistics 4.0
 
+![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)
+![Total Images](https://img.shields.io/badge/Total%20Images-8,788-blue?style=flat-square)
+![Total Packages](https://img.shields.io/badge/Total%20Packages-11,427-green?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/YOUR_USERNAME/YOUR_REPO?style=flat-square)
+
 ### **Status:** Production-Ready for Research
 
 LOGIPACK is a high-fidelity, multimodal computer vision dataset specifically engineered to meet the industrial and research demands of **Logistics 4.0**. It provides a comprehensive foundation for developing and benchmarking hybrid AI systems in dynamic warehouse settings, focusing on the core challenges of **3D metrology** and **semantic classification**.
 
------
+---
+
+## 📜 Table of Contents
+* [📈 Core Dataset Statistics](#-core-dataset-statistics)
+* [🎯 Benchmark Tasks and Modularity](#-benchmark-tasks-and-modularity)
+* [👁️ Data Robustness and Visual Variability](#️-data-robustness-and-visual-variability)
+* [🖼️ Visual Data Examples](#️-visual-data-examples)
+* [🛠️ Usage & Integration](#️-usage--integration)
+* [📝 Citation](#-citation)
+* [🤝 Contribution & Support](#-contribution--support)
+* [🛡️ License](#-license)
+
+---
 
 ## 📈 Core Dataset Statistics
 
@@ -17,7 +34,7 @@ This corpus provides a rigorous testbed for model robustness, featuring precise 
 | **Fragility Classification Set** | **14,680** | Instances | Balanced set for semantic decision-making (Fragile/Standard). |
 | **3D Metrology Ground Truth** | **400** | Images w/ 3D Cuboids | Reference data for depth estimation and volume accuracy. |
 
------
+---
 
 ## 🎯 Benchmark Tasks and Modularity
 
@@ -34,23 +51,25 @@ The dataset is organized into three distinct, yet integrated, modules, allowing 
 The file structure is aligned with the modular design:
 
 ```
-LOGIPACK_DATASET/
-├── 3D_Metrology_GT/            # Ground-truth cuboids and real physical measurements (L, W, H in cm).
-├── Semantic_Classification/    # Classification Data (Input: Isolated package crops).
-│   ├── train/                  # Includes /fragile and /standard subdirectories.
-│   ├── valid/
-│   └── test/
-└── Geometry_Localization/      # Detection and Segmentation Data (Input: Full scene images).
-		├── classes.txt             
-		├── data.yaml               # YOLO-style configuration file.
-		├── train/
-		│   ├── images/
-		│   └── labels/             # Annotation files (YOLO format).
-		├── valid/
-		└── test/
-```
 
+LOGIPACK\_DATASET/
+├── 3D\_Metrology\_GT/            \# Ground-truth cuboids and real physical measurements (L, W, H in cm).
+├── Semantic\_Classification/    \# Classification Data (Input: Isolated package crops).
+│   ├── train/                  \# Includes /fragile and /standard subdirectories.
+│   ├── valid/
+│   └── test/
+└── Geometry\_Localization/      \# Detection and Segmentation Data (Input: Full scene images).
+├── classes.txt             
+├── data.yaml               \# YOLO-style configuration file.
+├── train/
+│   ├── images/
+│   └── labels/             \# Annotation files (YOLO format).
+├── valid/
+└── test/
 
+````
+
+---
 
 ## 👁️ Data Robustness and Visual Variability
 
@@ -60,47 +79,47 @@ The distinct value of LOGIPACK lies in its deliberate inclusion of visual degrad
 
 The corpus was built using a dual-source strategy combined with specific synthetic augmentations to target common industrial failures:
 
-	* **Simulated Realism:** Images were captured to reflect the difficult visual landscape of an active sorting facility, focusing on poor image quality conditions.
-	* **Targeted Augmentations:** To enhance generalization, the dataset was artificially enriched using the following transformations on the base images:
+* **Simulated Realism:** Images were captured to reflect the difficult visual landscape of an active sorting facility, focusing on poor image quality conditions.
+* **Targeted Augmentations:** To enhance generalization, the dataset was artificially enriched using the following transformations on the base images:
 
 | Transformation | Range Applied | Purpose and Rationale |
 | :--- | :--- | :--- |
-| **Brightness Variation** | Modified between $-24%$ and $+24%$ | [cite_start]Simulates extreme **illumination shifts** (deep shadows vs. high reflections)[cite: 696]. |
-| **Motion Blur** | Up to $4.8\text{ pixels}$ applied | [cite_start]Prepares models for **motion blur** caused by high-speed package transport on conveyor belts[cite: 700]. |
-| **Noise Addition** | Up to $0.73%$ of pixels | [cite_start]Replicates **sensor noise** and poor signal quality under sub-optimal lighting conditions[cite: 706]. |
-| **Rotation** | Randomly between $-15^{\circ}$ and $+15^{\circ}$ | [cite_start]Ensures **orientation invariance** for packages placed obliquely or unaligned[cite: 689]. |
+| **Brightness Variation** | Modified between $-24\%$ and $+24\%$ | Simulates extreme **illumination shifts** (deep shadows vs. high reflections). |
+| **Motion Blur** | Up to $4.8\text{ pixels}$ applied | Prepares models for **motion blur** caused by high-speed package transport on conveyor belts. |
+| **Noise Addition** | Up to $0.73\%$ of pixels | Replicates **sensor noise** and poor signal quality under sub-optimal lighting conditions. |
+| **Rotation** | Randomly between $-15^{\circ}$ and $+15^{\circ}$ | Ensures **orientation invariance** for packages placed obliquely or unaligned. |
 
 ### 2. Annotation Quality and Semantic Complexity
 
-	* [cite_start]**Segmentation Masks:** Instance segmentation masks were prioritized over simple bounding boxes to provide **precise pixel-level geometry**, which is essential for accurate monocular 3D reconstruction and isolating package features from background clutter[cite: 748, 777].
-	* **Visual Packaging Diversity:** The dataset includes a wide range of package characteristics to prevent feature over-fitting:
-			* **Colors & Textures:** Variation across brown cardboard, white boxes, plastic mailers, and various printed labels.
-			* **Surface Conditions:** Includes glossy/reflective surfaces (e.g., tape, plastic) and non-textured surfaces (matte cardboard), which typically challenge depth sensors and standard RGB models.
-			* [cite_start]**Occlusions & Stacking:** Contains numerous examples of packages that are partially visible, stacked, or overlapping, testing the models' resilience and tracking capabilities[cite: 652].
+* **Segmentation Masks:** Instance segmentation masks were prioritized over simple bounding boxes to provide **precise pixel-level geometry**, which is essential for accurate monocular 3D reconstruction and isolating package features from background clutter.
+* **Visual Packaging Diversity:** The dataset includes a wide range of package characteristics to prevent feature over-fitting:
+    * **Colors & Textures:** Variation across brown cardboard, white boxes, plastic mailers, and various printed labels.
+    * **Surface Conditions:** Includes glossy/reflective surfaces (e.g., tape, plastic) and non-textured surfaces (matte cardboard), which typically challenge depth sensors and standard RGB models.
+    * **Occlusions & Stacking:** Contains numerous examples of packages that are partially visible, stacked, or overlapping, testing the models' resilience and tracking capabilities.
 
------
+---
 
-### 🖼️ Visual Data Examples
+## 🖼️ Visual Data Examples
 
-These images demonstrate the high-quality annotations and the complex scenarios covered by LOGIPACK.
+These images demonstrate the high-quality annotations and the complex scenarios covered by LOGIPACK. **(Ensure these images are in an `assets/` folder in your repository)**
 
 | Image Module | Description | Image Example |
 | :--- | :--- | :--- |
-| **`Geometry_Localization`** | **Detection in Heavy Clutter:** Demonstrates the model's ability to segment individual packages when tightly packed. | **[Insert Image of Détection et segmentation des colis dans une situation d'encombrement here]** |
-| **`Geometry_Localization`** | **Low Light Performance:** Shows the system's robustness against low-contrast and deep shadows. | **[Insert Image of Détection et segmentation des colis dans des conditions de faible luminosité here]** |
-| **`Semantic_Classification`** | **Fragility Semantic Input:** The isolated image crop used to train the binary classifier for the "Fragile" attribute. | **[Insert Image of Exemple de classification de colis fragile here]** |
-| **`3D_Metrology_GT`** | **Ground Truth Cuboid:** Visualization of the 3D cuboid annotation used for dimensional accuracy benchmarking. | **[Insert Image of Cuboïde 3D d'un colis here]** |
-| **Pipeline Output** | **Real-time Metrology:** Final visualization showing the L x W x H dimensions derived from the 3D point cloud analysis. | **[Insert Image of Exemple de métrologie en temps réel. Le système affiche les dimensions estimées (Longueur Largeur Hauteur) directement sur le colis détecté.]** |
+| **`Geometry_Localization`** | **Detection in Heavy Clutter:** Segmenting individual packages when tightly packed. | ![Detection in Heavy Clutter](./assets/localization_clutter.png) |
+| **`Geometry_Localization`** | **Low Light Performance:** Robustness against low-contrast and deep shadows. | ![Low Light Package Detection](./assets/low_light_performance.png) |
+| **`Semantic_Classification`** | **Fragility Semantic Input:** Isolated crop for the binary "Fragile" classifier. | ![Fragile Package Classification Crop](./assets/fragility_semantic_input.png) |
+| **`3D_Metrology_GT`** | **Ground Truth Cuboid:** Visualization of the 3D cuboid annotation for dimensional accuracy. | ![3D Cuboid Ground Truth Example](./assets/3d_metrology_cuboid.png) |
+| **Pipeline Output** | **Real-time Metrology:** Final visualization showing estimated L x W x H dimensions. | ![Real-time Metrology Output](./assets/pipeline_metrology_output.png) |
 
------
+---
 
 ### **🛠️ Usage & Integration**
 
 #### **Prerequisites**
 
-	* Python 3.8+
-	* PyTorch / TensorFlow
-	* Essential Libraries: OpenCV, NumPy, Ultralytics YOLO.
+* Python 3.8+
+* PyTorch / TensorFlow
+* Essential Libraries: OpenCV, NumPy, Ultralytics YOLO.
 
 #### **Example: Training for Instance Segmentation**
 
@@ -109,7 +128,7 @@ To train a model using the localization data, ensure your `data.yaml` inside the
 ```powershell
 # Example command to train a state-of-the-art model on the Geometric data
 yolo segment train data=Geometry_Localization/data.yaml model=yolov8s-seg.pt epochs=50 imgsz=640
-```
+````
 
 -----
 
@@ -118,7 +137,7 @@ yolo segment train data=Geometry_Localization/data.yaml model=yolov8s-seg.pt epo
 If you use LOGIPACK in your academic or professional work, please cite the Master's thesis that produced this resource:
 
 > **Author(s):** Achraf Antri
-> **Title:** [Title of the Thesis]
+> **Title:** De la détection à l'estimation dimensionnelle des colis pour la logistique intelligente
 > **Institution:** ENSI (École Nationale des Sciences de l'Informatique)
 > **Year:** 2025
 
@@ -126,13 +145,10 @@ If you use LOGIPACK in your academic or professional work, please cite the Maste
 
 -----
 
-### **🤝 Contribution & Support**
-
-We welcome contributions and new annotations to expand the coverage of this benchmark. Please open an [Issue] for bug reports or data errors, or submit a [Pull Request] for code contributions.
-
 -----
 
 ### **🛡️ License**
 
 This dataset is released under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
+```
