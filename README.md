@@ -101,8 +101,7 @@ The corpus was built using a dual-source strategy combined with specific synthet
 
 ## 🖼️ Visual Data Examples
 
-These images demonstrate the high-quality annotations and the complex scenarios covered by LOGIPX. (Ensure these images are in an `assets/` folder in your repository)
-
+These images demonstrate the high-quality annotations and the complex scenarios covered by LOGIPX.
 | Image Module | Description | Image Example |
 | :--- | :--- | :--- |
 | `Geometry_Localization` | Detection in Heavy Clutter: Segmenting individual packages when tightly packed. | ![Detection in Heavy Clutter](./assets/localization_clutter.png) |
