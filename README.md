@@ -141,7 +141,6 @@ If you use LOGIPACK in your academic or professional work, please cite the Maste
 > **Institution:** ENSI (École Nationale des Sciences de l'Informatique)
 > **Year:** 2025
 
-*(Please update the title once the thesis is published.)*
 
 -----
 
