@@ -59,11 +59,11 @@ LOGIPX\_DATASET/
 │   ├── valid/
 │   └── test/
 └── Geometry\_Localization/      \# Detection and Segmentation Data (Input: Full scene images).
-├── classes.txt             
-├── data.yaml               \# YOLO-style configuration file.
-├── train/
-│   ├── images/
-│   └── labels/             \# Annotation files (YOLO format).
+│   ├── classes.txt             
+│   ├── data.yaml               \# YOLO-style configuration file.
+│   ├── train/
+│   │    └── images/
+│   │    └── labels/             \# Annotation files (YOLO format).
 ├── valid/
 └── test/
 
