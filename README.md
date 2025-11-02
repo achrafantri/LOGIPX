@@ -104,11 +104,11 @@ The corpus was built using a dual-source strategy combined with specific synthet
 These images demonstrate the high-quality annotations and the complex scenarios covered by LOGIPX.
 | Image Module | Description | Image Example |
 | :--- | :--- | :--- |
-| `Geometry_Localization` | Detection in Heavy Clutter: Segmenting individual packages when tightly packed. | ![Detection in Heavy Clutter](./assets/localization_clutter.png) |
-| `Geometry_Localization` | Low Light Performance: Robustness against low-contrast and deep shadows. | ![Low Light Package Detection](./assets/low_light_performance.png) |
-| `Semantic_Classification` | Fragility Semantic Input: Isolated crop for the binary "Fragile" classifier. | ![Fragile Package Classification Crop](./assets/fragility_semantic_input.png) |
-| `3D_Metrology_GT` | Ground Truth Cuboid: Visualization of the 3D cuboid annotation for dimensional accuracy. | ![3D Cuboid Ground Truth Example](./assets/3d_metrology_cuboid.png) |
-| Pipeline Output | Real-time Metrology: Final visualization showing estimated L x W x H dimensions. | ![Real-time Metrology Output](./assets/pipeline_metrology_output.png) |
+| `Geometry_Localization` | Detection in Heavy Clutter: Segmenting individual packages when tightly packed. | ![Detection in Heavy Clutter](./Assets/localization_clutter.png) |
+| `Geometry_Localization` | Low Light Performance: Robustness against low-contrast and deep shadows. | ![Low Light Package Detection](./Assets/low_light_performance.png) |
+| `Semantic_Classification` | Fragility Semantic Input: Isolated crop for the binary "Fragile" classifier. | ![Fragile Package Classification Crop](./Assets/fragility_semantic_input.png) |
+| `3D_Metrology_GT` | Ground Truth Cuboid: Visualization of the 3D cuboid annotation for dimensional accuracy. | ![3D Cuboid Ground Truth Example](./Assets/3d_metrology_cuboid.png) |
+| Pipeline Output | Real-time Metrology: Final visualization showing estimated L x W x H dimensions. | ![Real-time Metrology Output](./Assets/pipeline_metrology_output.png) |
 
 ---
 
