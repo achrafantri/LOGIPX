@@ -50,19 +50,7 @@ LOGIPACK_DATASET/
 		└── test/
 ```
 
------
 
-	### 🔀 Repository folder mapping (actual vs canonical)
-
-	The README above uses canonical module names for clarity. The current repository uses slightly different folder names. Below is a recommended mapping — either rename folders locally to match the canonical names, or keep the existing names and treat these as equivalent in code and scripts.
-
-	| Canonical name (README) | Current folder in repo | Recommendation |
-	| :--- | :--- | :--- |
-	| `3D_Metrology_GT` | `3D_Cuboids` | Equivalent — consider renaming to `3D_Metrology_GT/` for consistency, or update scripts to point to `3D_Cuboids/`. |
-	| `Semantic_Classification` | `Binary_Cls` | Equivalent — `Binary_Cls/` contains fragile/standard crops. Consider renaming for clarity. |
-	| `Geometry_Localization` | `Instance_Seg` | Equivalent — `Instance_Seg/` holds segmentation and detection data. Either rename or update `data.yaml` paths accordingly. |
-
-	If you'd like, I can rename these directories and update `data.yaml` automatically, or instead add a short shell script to translate between names at training time.
 
 ## 👁️ Data Robustness and Visual Variability
 
