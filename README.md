@@ -1,13 +1,12 @@
-# 📦 LOGIPX: A Robust Multimodal Benchmark for Logistics 4.0
+# 📦 LOGIPX:  A Multi-Task Benchmark for Logistics 4.0
 
 ![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)
 ![Total Images](https://img.shields.io/badge/Total%20Images-8,788-blue?style=flat-square)
 ![Total Packages](https://img.shields.io/badge/Total%20Packages-11,427-green?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/achrafantri/LOGIPX?style=flat-square&cacheSeconds=1)
 
-### Status: Production-Ready for Research
 
-LOGIPX (LOGIstic PiXel dataset)is a high-fidelity, multimodal computer vision dataset specifically engineered to meet the industrial and research demands of Logistics 4.0. It provides a comprehensive foundation for developing and benchmarking hybrid AI systems in dynamic warehouse settings, focusing on the core challenges of 3D metrology and semantic classification.
+LOGIPX (LOGIstic PiXel) is a multi-task computer vision benchmark for parcel perception in modern logistics environments. It supports object detection, instance segmentation, semantic classification, multi-object tracking, and monocular 3D dimension estimation within a unified framework. Collected under real warehouse conditions with clutter, occlusions, and varying illumination, LOGIPX enables fair and reproducible evaluation of vision-based logistics systems and provides a strong foundation for research on robust and scalable parcel handling solutions
 
 ---
 
